@@ -1,0 +1,36 @@
+body{
+    background-color: #ddd;
+}
+.formContent {
+    width: 40%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 1px 0px 1px #bbb;
+    font-size: 20px;
+    font-family: 'Heuvetica Neue', Arial, Helvetica, sans-serif;
+}
+form > div{
+    margin-bottom: 20px;
+}
+input{
+    display: block;
+    height: 30px;
+    width: 100%;
+    border: 1px solid #bbb;
+    border-radius: 5px;
+}
+input:focus{
+    outline: 0px;
+    border: 1px solid transparent;
+    box-shadow: 0px 0px 5px green;
+}
+button{
+    border-radius: 0px;
+    border: 1px solid #bbb;
+    padding: 5px;
+}

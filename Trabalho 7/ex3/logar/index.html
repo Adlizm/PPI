@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="styles.css">
+    <title>Exercício 3 - Login</title>
+    <style>
+        #loginFailMsg {
+            color: red;
+            text-align: center;
+            display: none;
+        }
+    </style>
+
+</head>
+<body>
+    <div class="formContent">
+        <form method="POST">
+            <div>
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email">
+            </div>
+            <div>
+                <label for="senha">Senha</label>
+                <input type="password" id="senha" name="senha">
+            </div>
+            <button>Logar</button>
+            <div id="loginFailMsg">
+                Senha ou Email inválido
+            </div>    
+        </form>
+    </div>
+
+    <script>
+        window.onload = () => {
+            const button = document.querySelector("form > button");
+            button.onclick = (e) => {
+                e.preventDefault();
+
+                let meuForm = document.querySelector("form");
+                let formData = new FormData(meuForm);
+
+                let xhr = new XMLHttpRequest();
+                xhr.open("POST", "valida.php");
+                xhr.send(formData);
+
+                xhr.onload = () => {
+                    try {
+                        // converte string JSON em objeto JavaScript
+                        var response = JSON.parse(xhr.responseText);
+                    }catch (e) {
+                        console.error("JSON inválido: " + xhr.responseText);
+                        return;
+                    }
+                    if (response.success)
+                        window.location = response.destination;
+                    else
+                        document.querySelector("#loginFailMsg").style.display = 'block';
+                }
+            }
+        }
+
+    </script>
+</body>
+</html>

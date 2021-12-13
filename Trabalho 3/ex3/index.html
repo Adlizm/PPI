@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercício 3</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            background-color: #eee;
+        }
+        header{
+            width: 100%;
+            background-color: #000;
+        }
+        header h1{
+            padding: 10px 0;
+            text-align: center;
+            color: #fff;
+        }
+        nav{
+            background-color: #fff;
+            width: 100%;
+            box-shadow: 1px 0px 3px #000;
+        }
+        nav ul{
+            display: block;
+            width: fit-content;
+            margin: 0 auto;
+        }
+        nav ul li{
+            display: inline-block;
+            border-right: 1px solid #ddd;
+        }
+        nav ul li:last-child{
+            border-right: none;
+        }
+        nav ul li button{
+            outline: none;
+            background-color: #fff;
+            border: none;
+            padding: 10px;
+        }
+        .buttonActive{
+            font-weight: bold;
+            color: blue;
+        }
+        main {
+            width: 60%;
+            margin: 10px auto 0px;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0px 0px 3px #000;
+        }
+        main h2 {
+            text-align: center;
+            margin-bottom: 10px;
+            color: blue;
+        }
+        
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Faculdade de Computação</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><button>Ciência da Computação</button></li>
+            <li><button>Sistemas da Informação</button></li>
+            <li><button>Mestrado</button></li>
+            <li><button>Doutorado</button></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section>
+            <h2>Bacharelado em Ciência da Computação</h2>
+            <p>
+                Conteudo da sessção de Ciência da Computação
+            </p>
+        </section>
+        <section>
+            <h2>Bacharelado em Sistemas da Informação</h2>
+            <p>
+                Conteudo da sessção de Sistemas da Informação
+            </p>
+        </section>
+        <section>
+            <h2>Mestrado em Ciência da Computação</h2>
+            <p>
+                Conteudo da sessção de Mestrado
+            </p>
+        </section>
+        <section>
+            <h2>Doutorado em Ciência da Computação</h2>
+            <p>
+                Conteudo da sessção de Doutorado
+            </p>
+        </section>
+    </main>
+    
+    <script>
+        // Executa a função abaixo quando a aba estiver carregada
+        window.onload = () => {
+            // Obtem uma lista com todos os botões dentro do menu de navegação (nav ul li)
+            var buttonsMenu = document.querySelectorAll("nav ul li button");
+            // Obtem uma lista com todos os elementos sections dentro da main
+            var sections = document.querySelectorAll("main section");
+
+            // para cada botão 
+            for(let i = 0; i < buttonsMenu.length; i++){
+                // define a função ao clicar no mesmo como a
+                // chamada da função openSectionIndex(i) em que i
+                // indice em que se encontra o elemento section e button nas listas
+                // buttonsMenu e sections respectivamente
+                buttonsMenu[i].onclick = () => {openSectionIndex(i)};
+            }
+
+            function openSectionIndex(index){
+                // define para todos os botões da lista buttonsMenu class ""
+                // ou seja, retira todas as classe de estilos definidas
+                for(let button of buttonsMenu){
+                    button.className = "";
+                }
+                // define para todos as section na lista sections que seu display é "none"
+                // ou seja, não deve aparecer nenhuma section
+                for(let section of sections){
+                    section.style.display = "none";
+                }
+                // define para a section cujo indice na lista sections é index
+                // diplay block, ou seja, somente essa section aparecerá.
+                sections[index].style.display = "block";
+                // define para o button cujo indice na lista buttonsMenu é index
+                // className, ou seja, somente esse button terá o estilo da classe "buttonActive"
+                buttonsMenu[index].className = "buttonActive";
+            }
+            // executa a função para o primeiro button/section
+            openSectionIndex(0);
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercício 2</title>
+    <style>
+        main{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+
+            padding: 15px;
+            background-color: #ddd;
+            box-shadow: 0px 0px 1px #000;
+
+            font-size: 18px;
+        }
+        ol > li {
+            padding: 5px 10px;
+            background-color: lightblue;
+            border: 1px solid #14bbf3;
+            border-radius: 5px;
+            margin-bottom: 5px;
+        }
+        ol > li span {
+            float: right;
+            color: red;
+            line-height: 100%;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <div>
+            <label for="item">Interesse: </label>
+            <input type="text" id="item">
+        </div>
+    
+        <ol></ol>
+    </main>
+    
+
+    <script>
+         // Executa a função abaixo quando a aba estiver carregada
+        window.onload = () => {
+            // obtem o primeiro input dentro de uma div (no caso o unico input)
+            var input = document.querySelector("div input");
+            // define uma função que sera chamada toda vez que uma tecla é precionada
+            input.onkeypress = e => {
+                // se a tecla pressionada for enter e o conteudo do input não estiver vazio
+                if(e.key == "Enter" && input.value != ""){
+                    // chama a função para criar uma item na lista
+                    createListItem();
+                }
+            }
+
+            // defini uma funcao
+            function createListItem() {
+                // obtem o primeiro elemento ol (no caso o único)
+                let lista = document.querySelector("ol");
+                // cria um elemento da tag <li> 
+                let itemLista = document.createElement("li");
+                // cria um elemento da tag <span> 
+                let spanRemoveItem = document.createElement("span");
+                // cria um elemento da tag <label> 
+                let labelItem = document.createElement("label");
+                
+                // define o conteudo do label como o conteudo do input
+                labelItem.textContent = input.value;
+                // defineo o contedo do span como ✖
+                spanRemoveItem.textContent = "✖";
+                // define funcao ao clicar no span
+                spanRemoveItem.onclick = () => {
+                    // remove o elemento <li> da arvore DOM 
+                    itemLista.remove();
+                }
+                // adiciona o elemento label como filho do li
+                itemLista.appendChild(labelItem);
+                // adiciona o elemento span como filho do li
+                itemLista.appendChild(spanRemoveItem);
+                // adiciona o elemento li a lista ol
+                lista.appendChild(itemLista);
+                // define o conteudo do input como vazio
+                input.value = "";
+            }
+        }
+    </script>
+</body>
+</html>

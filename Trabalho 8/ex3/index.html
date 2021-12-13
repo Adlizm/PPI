@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trabalho7 - Exercicio 4</title>
+</head>
+<body>
+    <form>
+        <label for="especialidade">Especialidade: </label>
+        <select name="especialidade" id="especialidade">
+            <option value="cardiologia">Cardiologia</option>
+            <option value="dermatologia">Dermatologia</option>
+            <option value="oftalmologia">Oftalmologia</option>
+        </select>
+        
+        <label for="medicos">Medicos disponiveis: </label>
+        <select name="medicos" id="medicos">
+        </select>
+    </form>
+
+    <div></div>
+    <script>
+        window.onload = () => {
+            const selectEspecialida = document.getElementById("especialidade");
+
+            function insertMedicos(medicos){
+                let selectMedicos = document.getElementById("medicos");
+                selectMedicos.innerText = "";
+                
+                for(let medico of medicos){
+                    let option = document.createElement("option");
+                    option.innerText = medico;
+                    
+                    selectMedicos.appendChild(option);
+                }
+            }
+
+            function getMedicos(){
+                let especialidade = selectEspecialida.value;
+                
+                fetch("buscaMedicos.php?especialidade="+especialidade)
+                    .then(response => {
+                        if (!response.ok) {
+                            throw new Error(response.status);
+                        }
+                        return response.json();
+                    })
+                    .then(response => {
+                        let medicos = response == [] ? ["Nenhum"] : response;
+                        insertMedicos(medicos);
+                    })
+                    .catch(e => console.error(e));    
+            }
+            
+            selectEspecialida.onchange = getMedicos;
+            getMedicos();
+        }
+    </script>
+</body>
+</html>

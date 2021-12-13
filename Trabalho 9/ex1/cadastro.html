@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro</title>
+
+    <style>
+        main{
+            width: fit-content;
+            margin: 10px auto;
+            border: 1px solid #333;
+        }
+        form{
+            width: fit-content;
+            padding: 15px;
+        }
+        form div{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        form div label{
+            width: fit-content;
+            min-width: 120px;
+        }
+        form div input{
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <form action="cadastro.php" method="post">
+            <div>
+                <label for="nome">Nome: </label>
+                <input type="text" id="nome" name="nome" required>
+            </div>
+            <div>
+                <label for="email">Email: </label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div>
+                <label for="cpf">CPF: </label>
+                <input type="text" id="cpf" name="cpf" placeholder="xxx.xxx.xxx-xx" pattern="\d{3}\.\d{3}\.\d{3}-\d{2}" required>
+            </div>
+            <div>
+                <label for="senha">Senha: </label>
+                <input type="password" id="senha" name="senha" required>
+            </div>
+            <div>
+                <label for="data_nascimento">Data Nascimento: </label>
+                <input type="date" id="data_nascimento" name="data_nascimento" required>
+            </div>
+            <div>
+                <label for="estado_civil">Estado Civil: </label>
+                <input type="text" id="estado_civil" name="estado_civil" required>
+            </div>
+            <div>
+                <label for="altura">Altura: </label>
+                <input type="number" id="altura" name="altura" min="0" step="0.01" value="1.70" required>
+            </div>
+            <button>Cadastrar</button>
+        </form>
+    </main>
+</body>
+</html>

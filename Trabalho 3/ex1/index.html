@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercício 1</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        main {
+            padding: 10px;
+        }
+        main h1, main p {
+            margin-bottom: 10px;
+        }
+        main button{
+            padding: 5px;
+        }
+        .modal {
+            display: none;
+            position: fixed;
+
+            top: 0;
+            left: 0;
+
+            width: 100%;
+            height: 100vh;
+            background-color: #000000aa;
+        }
+        .contentModal{
+            width: 300px;
+            height: 60px;
+            background-color:#ddd;
+            padding: 10px;
+            box-shadow: 0px 0px 3px lightblue;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+        }
+        .contentModal h2{
+            margin-top: 10px;
+        }
+        .contentModal button{
+            width: 100%;
+            cursor: pointer;
+            padding: 5px;
+            border: 1px solid #14bbf3;
+            background-color: lightblue;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <h1>FACOM</h1>
+        <p>
+            A Faculdade de Computação (FACOM) da Universidade Federal de Uberlândia
+            foi criada em 2000, a partir do extinto Departamento de Informática (DEINF),
+            criado em 1968, no âmbito do CETEC.
+        </p>
+        <p>
+            No inicio dos anos 2000 foi criado na Faculdade o Programa de Pós-Graduação em
+            Ciência da Computação.
+        </p>
+        <button>Abrir Modal</button>
+    </main>
+
+    <div class="modal">
+        <div class="contentModal">
+            <h2>Olá, Seja bem vindo!</h2>
+            <button>Ok</button>
+        </div>
+    </div>
+    
+    <script>
+        // Executa a função abaixo quando a aba estiver carregada
+        window.onload = () => {
+            // obtem o botão filho direto da main
+            var btnAbreModal = document.querySelector("main > button");
+            // obtem a div com a classe modal  
+            var modal = document.querySelector("div.modal");
+            // obtem o botão dentro da div com classe contentModal
+            var btnFechaModal = document.querySelector("div.contentModal > button");
+            // defini a função que será executada ao clicar no botão "btnAbreModal"
+            btnAbreModal.onclick = () => {
+                // define o um estilo inline no modal com display block
+                // fazendo o modal aparecer
+                modal.style.display = "block";
+            }
+            // defini a função que será executada ao clicar no botão "btnFechaModal"
+            btnFechaModal.onclick = () => {
+                // define o um estilo inline no modal com display none
+                // fazendo o modal desaparecer
+                modal.style.display = "none";
+            }
+        }
+    </script>
+</body>
+</html>

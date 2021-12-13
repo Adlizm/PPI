@@ -1,0 +1,226 @@
+:root {
+    --cor-azul: #00005a;
+    --cor-roxa: #5a005a;
+    --cor-branca: #ffffff;
+    --cor-cinza: #ececec;
+    --cor-roxoclaro: #fffcff;
+    --cor-preto: #000;
+    --cor-pretotrasp: #000000cc;
+}
+
+/* global */
+*{
+  margin: 0;
+  padding: 0;
+  outline: 0;
+  box-sizing: border-box;
+
+  font-size: 16px;
+}
+body{
+  background-color: var(--cor-cinza)
+}
+/* header */
+header{
+  position: sticky;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 5px;
+  background-color: var(--cor-roxoclaro);
+  width: 100%;
+  box-shadow: 0px 0px 6px var(--cor-roxa);
+  text-align: center;
+  z-index: 999;
+}
+header > div.logo{
+  width: fit-content;
+}
+
+/* nav*/
+nav {
+  box-shadow: 0px 0px 6px var(--cor-roxa);
+}
+nav ul {
+  margin: 0 auto !important;
+}
+nav ul li a:hover{
+  border-top: 2px solid var(--cor-roxa);
+  color: var(--cor-roxa) !important;
+  font-weight: bold;
+}
+nav button.navbar-toggler{
+  border-color: var(--cor-roxa) !important;
+  border-radius: 3px;
+  outline: 0 !important;
+  font-size: 1rem !important;
+}
+
+/* footer */
+footer{
+  padding: 10px;
+  background-color: var(--cor-azul);
+  color: var(--cor-branca);
+}
+.footer-content{
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+}
+.footer-item {
+  display: flex;
+  justify-content: space-around;
+}
+.footer-item > div{
+  display: flex;
+  justify-content: space-between;
+}
+.footer-item i, .footer-item p{
+  display: block;
+  margin-right: 10px;
+}
+.footer-item > p{
+  font-size: 12px;
+  text-align: center;
+}
+
+/* main */
+main {
+  width: 100%;
+  max-width: 720px;
+  margin: 30px auto 30px;
+  padding: 20px;
+  background-color: var(--cor-roxoclaro);
+  box-shadow: 0px 0px 6px var(--cor-roxa);
+  border: 2px solid var(--cor-roxoclaro);
+  border-radius: 10px;
+}
+main > div{
+  width: 100%;
+  margin-bottom: 10px;
+}
+main > div h2, main > div h3{
+  text-align: center;
+  color: var(--cor-branca);
+  text-shadow: 0px 0px 4px var(--cor-roxa);
+}
+main > div p{
+  color: var(--cor-preto);
+}
+main.home {
+  height: 480px;
+  overflow: hidden;
+  position: relative;
+}
+main.home > img{
+  position: absolute;
+  width: 720px;
+  top: 50%;
+  right: 0%;
+  transform: translateX(50%) translateY(-50%);
+  opacity: 60%;
+  border-radius: 50% 0 0 50%;
+}
+main.home > div{
+  position: relative;
+  z-index: 2;
+}
+main.galeria > div:last-child{
+  display: flex;
+  justify-content: space-between;
+}
+main.galeria button{
+  width: 40px;
+  height: 40px;
+  line-height: 0px;
+  background-color: var(--cor-roxa);
+  color: var(--cor-branca);
+  border: 1px solid var(--cor-branca);
+  border-radius: 50%;
+  font-weight: bold;
+  font-size: 40px;
+}
+main.galeria button:hover{
+  background-color: var(--cor-branca);
+  color: var(--cor-roxa);
+  border: 1px solid var(--cor-roxa);
+}
+
+/* form na main */
+form{
+  padding: 20px;
+  margin: 10px auto;
+} 
+form > div{
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 1px !important;
+  margin-bottom: 5px;
+  background-color: var(--cor-roxa);
+}
+form > div label{
+  display: inline-block;
+  width: fit-content;
+  min-width: 110px;
+  text-align: center;
+  color: var(--cor-branca);
+}
+form > div input, form > div select{
+  width: 100%;
+  padding: 5px;
+  border:none;
+}
+form > div .input-sexo{
+  display: inline-block;
+  width: fit-content !important;
+}
+form > div .input-sexo input, 
+form > div .input-sexo label{
+  display: inline-block;
+  width: fit-content;
+  min-width: fit-content;
+}
+form > div .checkboxm input{
+  background-color: var(--cor-branca) !important;
+}
+form > button, div.msg > button{
+  width: fit-content !important;
+  padding: 5px 15px !important;
+  border: 1px solid var(--cor-branca);
+  background-color: var(--cor-roxa);
+  color:var(--cor-branca);
+}
+form > button:hover, div.msg > button:hover{
+  border: 1px solid var(--cor-roxa);
+  background-color: var(--cor-branca);
+  color:var(--cor-roxa);
+}
+
+/* outros */
+.galeria img{
+  margin: 10px auto;
+}
+div.msg{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  margin: 0;
+  padding: 10px;
+  width: 30%;
+
+  text-align: center;
+  
+  background-color: var(--cor-branca);
+  box-shadow: 0 0 5px var(--cor-roxa);
+  display: none;
+}
+.not-shown{
+  display: none;
+}
+.not-visible{
+  visibility: hidden;
+}

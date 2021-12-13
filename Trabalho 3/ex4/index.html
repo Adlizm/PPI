@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercício 4</title>
+
+    <style>
+        body{
+            margin: 0;
+            background-color: #ddd;
+        }
+        form{
+            width: 300px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0px 0px 3px #000;
+            border-radius: 10px;
+        }
+        form h2{
+            margin: 0px 0px 10px;
+            font-size: 18px;
+        }
+        form input{
+            width: 290px;
+            border: 1px solid #333;
+            border-radius: 5px;
+            display: block;
+            padding: 5px;
+        }
+        form > div {
+            margin-bottom: 20px;
+        }
+        form span{
+            color: red;
+        }
+        form button{
+            cursor: pointer;
+            padding: 5px 10px;
+        }
+    </style>
+</head>
+<body>
+    <form name="formCadastro">
+        <h2>Cadastro Usuário</h2>
+        <div>
+            <label for="user">Usuário:</label>
+            <input type="text" id="user">
+            <span></span>
+        </div>
+        <div>
+            <label for="pass">Senha:</label>
+            <input type="password" id="pass">
+            <span></span>
+        </div>
+        <div>
+            <label for="email">Email:</label>
+            <input type="email" id="email">
+            <span></span>
+        </div>
+        <button>Cadastrar</button>
+    </form>
+
+    <script>
+        // Executa a função abaixo quando a aba estiver carregada
+        window.onload = () => {
+            // define a funcao "validaCadastro" ser chamada quando o formulário 
+            // cujo name é "formCadastro" for submetido
+            document.forms.formCadastro.onsubmit = validaCadastro;
+        }
+
+        function validaCadastro(e) {
+            // obtem a referência para o formulário que foi submetido
+            //  no caso "formCadastro"
+            var form = e.target;
+
+            // obtem o proximo elemento apos o input "user" no caso o span
+            var spanUser = form.user.nextElementSibling;
+            // obtem o proximo elemento apos o input "pass" no caso o span
+            var spanPass = form.pass.nextElementSibling;
+            // obtem o proximo elemento apos o input "email" no caso o span
+            var spanEmail = form.email.nextElementSibling;
+
+            // define o conteudo do spanUser como vazio
+            spanUser.textContent = "";
+            // define o conteudo do spanPass como vazio
+            spanPass.textContent = "";
+            // define o conteudo do spanEmail como vazio
+            spanEmail.textContent = "";
+
+            // define variavel formValido com valor true incial
+            var formValido = true;
+            // se o contudo do input user for vazio
+            if(form.user.value == ""){
+                // altera o conteudo do spanUser
+                spanUser.textContent = "Campo de usuário deve ser preenchido!";
+                // define formValido como falso
+                formValido = false;
+            }
+            // se o contudo do input pass for vazio
+            if(form.pass.value == ""){
+                // altera o conteudo do spanPass
+                spanPass.textContent = "Campo de senha deve ser preenchido!";
+                // define formValido como falso
+                formValido = false;
+            }
+            // se o contudo do input email for vazio
+            if(form.email.value == ""){
+                // altera o conteudo do spanEmail
+                spanEmail.textContent = "Campo de email deve ser preenchido!";
+                // define formValido como falso
+                formValido = false;
+            }
+            // retorna o valor de formValido (true ou falso)
+            return formValido;
+        }
+    </script>
+</body>
+</html>

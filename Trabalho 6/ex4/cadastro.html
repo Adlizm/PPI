@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Exercício 4 - Cadastro Paciente</title>
+</head>
+<body>
+    <div class="container">
+        <form action="cadastrar.php" method="POST">
+            <div>
+                <label for="codigo">Codigo:</label>
+                <input type="number" id="codigo" name="codigo">
+            </div>
+            <div>
+                <label for="nome">Nome:</label>
+                <input type="text" id="nome" name="nome">
+            </div>
+            <div>
+                <label>Sexo:</label>
+                <label for="masculino">Masculino</label>
+                <input type="radio" id="masculino" value="M" name="sexo" checked>
+                <label for="feminino">Feminino</label>
+                <input type="radio" id="feminino" value="F" name="sexo">
+            </div>
+
+            <div>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email">
+            </div>
+            <div>
+                <label for="telefone">Telefone:</label>
+                <input type="tel" id="telefone" name="telefone">
+            </div>
+
+            <div>
+                <label for="cep">CEP:</label>
+                <input type="text" id="cep" name="cep">
+            </div>
+            <div>
+                <label for="logradouro">Logradouro:</label>
+                <input type="text" id="logradouro" name="logradouro">
+            </div>
+            <div>
+                <label for="altura">Cidade:</label>
+                <input type="text" id="cidade" name="cidade">
+            </div>
+            <div>
+                <label for="estado">Estado:</label>
+                <select id="estado" name="estado">
+                    <option value="MG">MG</option>
+                    <option value="RJ">RJ</option>
+                    <option value="SP">SP</option>
+                    <option value="GO">GO</option>
+                    <option value="DF">DF</option>
+                </select>
+            </div>
+
+            <div>
+                <label for="peso">Peso (kg):</label>
+                <input type="number" id="peso" name="peso" step=0.01 />
+            </div>
+            <div>
+                <label for="altura">Altura (m):</label>
+                <input type="number" id="altura" name="altura" step=0.01 />
+            </div>
+            <div>
+                <label for="tipoSanguineo">Tipo Sanguineo:</label>
+                <select id="tipoSanguineo" name="tipoSanguineo">
+                    <option value="O+">O+</option>
+                    <option value="O-">O-</option>
+                    <option value="A+">A+</option>
+                    <option value="A-">A-</option>
+                    <option value="B+">B+</option>
+                    <option value="B-">B-</option>
+                    <option value="AB+">AB+</option>
+                    <option value="AB-">AB-</option>
+                </select>
+            </div>
+            <div class="col">
+                <button>Cadastrar</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

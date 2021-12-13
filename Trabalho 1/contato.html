@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Contato</title>
+</head>
+<body>
+    <header>
+        <table>
+            <tr>
+                <td><img src="images/foto.png" alt="Avatar André" width="128" height="128"/></td>
+                <td><h1>André Luiz Morais Peres de Quinta</h1></td>
+            </tr>
+        </table>
+    </header>
+    <nav>
+        <h2>Menu de Navegação</h2>
+        <ul>
+            <li><a href="index.html">Principal</a></li>
+            <li><a href="galeria.html">Galeria</a></li>
+        </ul>
+    </nav>
+    <main>
+        <h2>Contato</h2>
+        <form method="post">
+            <section>
+                <h4>Dados Pessoais</h4>
+                <div>
+                    <label for="name">Nome:</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div>
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div>
+                    <label for="idade">Idade:</label>
+                    <input type="number" id="idade" name="idade" required>
+                </div>
+                <div>
+                    <label for="telefone">Telefone:</label>
+                    <input type="tel" id="telefone" name="telefone" required>
+                </div>
+                <div>
+                    <label for="dataNascimento">Data de Nascimento:</label>
+                    <input type="text" id="dataNascimento" name="dataNascimento">
+                </div>
+                <div>
+                    <label>Sexo:</label>
+                    <input type="radio" name="sexo" value="Masculino" id="sMasculino">
+                    <label for="sMasculino">Masculino</label>
+                    <input type="radio" name="sexo" value="Feminino" id="sFeminino">
+                    <label for="sFeminino">Feminino</label>
+                </div>
+                <div>
+                    <label>Estado Civil:</label>
+                    <input type="radio" name="estadoCivil" value="Solteiro" id="ecSolteiro">
+                    <label for="ecSolteiro">Solteiro</label>
+                    <input type="radio" name="estadoCivil" value="Casado" id="ecCasado">
+                    <label for="ecCasado">Casado</label>
+                    <input type="radio" name="estadoCivil" value="Divorciado" id="ecDivorciado">
+                    <label for="ecDivorciado">Divorciado</label>
+                </div>
+            </section>
+            <section>
+                <h4>Dados da Empresa</h4>
+                <div>
+                    <label for="cnpj">CNPJ:</label>
+                    <input type="text" id="cnpj" name="cnpj">
+                </div>
+                <div>
+                    <label for="razaoSocial">Razão Social:</label>
+                    <input type="text" id="razaoSocial" name="razaoSocial">
+                </div>
+                <div>
+                    <label for="ramo">Ramo de Atuação:</label>
+                    <input type="text" id="ramo" name="ramo">
+                </div>
+            </section>
+            <section>
+                <h4>Endereço</h4>
+                <div>
+                    <label for="cep">CEP:</label>
+                    <input type="text" id="cep" name="cep" required>
+                </div>
+                <div>
+                    <label for="tLogradouro">Tipo de Logradouro:</label>
+                    <select name="tipoLogradouro" id="tLogradouro" required >
+                        <option value="">Selecionar</option>
+                        <option value="Rua">Rua</option>
+                        <option value="Avenida">Avenida</option>
+                        <option value="Praça">Praça</option>
+                        <option value="Travessa">Travessa</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="logradouro">Logradouro:</label>
+                    <input type="text" id="logradouro" name="logradouro" required>
+                </div>
+                <div>
+                    <label for="cidade">Cidade:</label>
+                    <input type="text" id="cidade" name="cidade" required>
+                </div>
+                <div>
+                    <label for="estado">Estado:</label>
+                    <input type="text" id="estado" name="estado" required>
+                </div>
+            </section>
+            <section>
+                <h4>Descrição detalhada do interesse</h4>
+                <div>
+                    <textarea name="descricao" id="descricao" cols="30" rows="10"></textarea>
+                </div>
+            </section>
+            <section>
+                <h4>Outros</h4>
+                <div>
+                    <label>Area de Estudo:</label>
+                    <input type="radio" name="estudo" value="IA" id="eIA">
+                    <label for="eIA">Inteligência Artificial</label>
+                    <input type="radio" name="estudo" value="AA" id="eAA">
+                    <label for="eAA">Analise de Algorítimos</label>
+                    <input type="radio" name="estudo" value="SO" id="eSO">
+                    <label for="eSO">Sistema Operacional</label>
+                </div>
+
+                <div>
+                    <label>Linguagems de Programação Usada:</label>
+                    <input type="checkbox" name="lingProgr" value="C" id="lpC">
+                    <label for="lpC">C</label>
+                    <input type="checkbox" name="lingProgr" value="Go" id="lpGo">
+                    <label for="lpGo">Go</label>
+                    <input type="checkbox" name="lingProgr" value="Python" id="lpPython">
+                    <label for="lpPython">Python</label>
+                    <input type="checkbox" name="lingProgr" value="R" id="lpR">
+                    <label for="lpR">R</label>
+                </div>
+            </section>
+            <button> Enviar</button>
+        </form>
+    </main>
+    <footer>
+        <p>Trabalho para a disciplina GBC084:Programação para Internet - 2020/1</p>
+    </footer>
+</body>
+</html>

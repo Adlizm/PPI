@@ -1,0 +1,22 @@
+CREATE TABLE trab6_ex1_cliente
+(
+   id int PRIMARY KEY auto_increment,
+   nome varchar(50),
+   cpf char(14) UNIQUE,
+   email varchar(50) UNIQUE,
+   hash_senha varchar(255),
+   data_nascimento date,
+   estado_civil varchar(30),
+   altura int
+) ENGINE=InnoDB;
+
+CREATE TABLE trab6_ex1_endereco_entrega
+(
+   id int PRIMARY KEY auto_increment,
+   cep char(10),
+   endereco varchar(100),
+   bairro varchar(50),
+   cidade varchar(50),
+   id_cliente int not null,
+   FOREIGN KEY (id_cliente) REFERENCES trab6_ex1_cliente(id) ON DELETE CASCADE
+) ENGINE=InnoDB;
